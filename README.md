@@ -1,38 +1,111 @@
-# DIO - Trilha .NET - Fundamentos
-www.dio.me
+# SistemaEstacionamentoCSharp
+Desafio de projeto .NET - Sistema de um Estacionamento
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+# 🚗 Sistema de Estacionamento - Trilha .NET - Fundamentos
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
+Este repositório contém o desafio de projeto proposto na trilha de Fundamentos da .NET da DIO. O objetivo é consolidar os conhecimentos adquiridos no módulo, desenvolvendo um sistema para gerenciar veículos em um estacionamento.
 
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
-![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
+---
 
-A classe contém três variáveis, sendo:
+## 📝 Desafio de Projeto
 
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
+Você foi contratado para desenvolver um sistema que será utilizado em um estacionamento para gerenciar os veículos estacionados e realizar operações como:
 
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
+- Adicionar um veículo.
+- Remover um veículo (e calcular o valor total do período estacionado).
+- Listar todos os veículos estacionados.
 
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
+---
 
-A classe contém três métodos, sendo:
+## 🛠️ Especificações Técnicas
 
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
+### Classe: `Estacionamento`
 
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
+O sistema deverá incluir uma classe chamada `Estacionamento`, conforme representado no diagrama abaixo:
 
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
+![Diagrama de classe Estacionamento](diagrama_classe_estacionamento.png)
 
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
+### Variáveis da Classe:
 
+1. **`precoInicial`** (decimal): Representa o valor inicial cobrado ao estacionar um veículo.
+2. **`precoPorHora`** (decimal): Representa o valor cobrado por hora de permanência.
+3. **`veiculos`** (List<string>): Uma lista contendo as placas dos veículos atualmente estacionados.
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+### Métodos da Classe:
+
+1. **`AdicionarVeiculo`**  
+   Este método deve:
+   - Receber a placa do veículo digitada pelo usuário.
+   - Adicionar a placa à lista de veículos estacionados (`veiculos`).
+
+2. **`RemoverVeiculo`**  
+   Este método deve:
+   - Verificar se um veículo específico está estacionado (com base na placa fornecida pelo usuário).
+   - Solicitar o número de horas que o veículo permaneceu no estacionamento.
+   - Calcular o valor total, utilizando a fórmula:
+     ```
+     Valor Total = precoInicial + (precoPorHora * horas)
+     ```
+   - Remover o veículo da lista e exibir o valor total ao usuário.
+
+3. **`ListarVeiculos`**  
+   Este método deve:
+   - Exibir uma lista de todos os veículos estacionados atualmente.
+   - Caso a lista esteja vazia, exibir a mensagem: `"Não há veículos estacionados"`.
+
+---
+
+## 📋 Menu Interativo
+
+O programa principal deve apresentar um menu interativo para o usuário com as seguintes opções:
+
+1. **Cadastrar veículo**  
+   Permitir ao usuário adicionar um veículo ao sistema.
+
+2. **Remover veículo**  
+   Permitir ao usuário remover um veículo estacionado e calcular o valor total.
+
+3. **Listar veículos**  
+   Exibir todos os veículos atualmente estacionados.
+
+4. **Encerrar**  
+   Finalizar o programa.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos:
+- [.NET SDK](https://dotnet.microsoft.com/download) instalado na máquina.
+
+### Passos para executar:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/SeuUsuario/DesafioEstacionamento.git
+   cd DesafioEstacionamento
+   ```
+
+2. Compile o projeto:
+   ```bash
+   dotnet build
+   ```
+
+3. Execute o programa:
+   ```bash
+   dotnet run
+   ```
+
+---
+
+## ✍️ Autor Original
+
+Este projeto foi desenvolvido como parte do desafio da [Digital Innovation One (DIO)](https://www.dio.me/).
+
+---
+
+## ✍️ Desenvolvedor
+
+O projeto foi enriquecido por [Bruno Moura Mathias](https://github.com/BrunoMouraMathias), que contribuiu para sua melhoria e documentação.
+
+---
